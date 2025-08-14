@@ -1,17 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import './ShortUrlDetails.css';
 
 export default function ShortUrlDetails() {
     const { id } = useParams();
     const [linkData, setLinkData] = useState(null);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_BASE_URL}/api/shorturls/${id}`, { credentials: 'include' })
+        // Check authentication
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/api/sessions/current`, { credentials: 'include' })
             .then(res => res.json())
-            .then(data => setLinkData(data))
-            .catch(() => setLinkData(null));
-    }, [id]);
+            .then(data => {
+                if (!data.isAuthenticated) {
+                    navigate('/shorturls', { replace: true });
+                } else {
+                    setIsAuthenticated(true);
+
+                    fetch(`${import.meta.env.VITE_API_BASE_URL}/api/shorturls/${id}`, { credentials: 'include' })
+                        .then(res => res.json())
+                        .then(data => setLinkData(data))
+                        .catch(() => setLinkData(null));
+                }
+            })
+            .catch(() => {
+                navigate('/shorturls', { replace: true });
+            });
+    }, [id, navigate]);
 
     if (!linkData) return <p>Loading...</p>;
 

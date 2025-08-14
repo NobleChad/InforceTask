@@ -26,6 +26,10 @@ export default function ShortUrlTable({ userEmail }) {
     }, [userEmail]);
 
     const handleRowClick = (id) => {
+        if (!isAuthenticated) {
+            alert("You are not authorized to view this page.");
+            return;
+        }
         navigate(`/shorturl/${id}`);
     };
 

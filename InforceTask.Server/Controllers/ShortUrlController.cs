@@ -59,8 +59,7 @@ namespace InforceTask.Server.Controllers
         /// <response code="200">Short URL details returned.</response>
         /// <response code="404">Short URL not found.</response>
         [HttpGet("{id:int}")]
-        [ProducesResponseType(typeof(ShortUrlDetailDto), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Authorize]
         public async Task<IActionResult> GetById(int id)
         {
 
