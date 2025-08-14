@@ -1,0 +1,69 @@
+.shorturl-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+    .shorturl-container button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s;
+    }
+
+        .shorturl-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .shorturl-container button.delete {
+            background-color: #dc3545;
+            margin-left: 8px;
+        }
+
+            .shorturl-container button.delete:hover {
+                background-color: #a71d2a;
+            }
+
+    .shorturl-container table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .shorturl-container th, .shorturl-container td {
+        padding: 12px 15px;
+        text-align: left;
+    }
+
+    .shorturl-container thead {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .shorturl-container tbody tr {
+        border-bottom: 1px solid #ddd;
+        transition: background-color 0.2s;
+    }
+
+        .shorturl-container tbody tr:hover {
+            background-color: #f1f7ff;
+        }
+
+    .shorturl-container p {
+        text-align: center;
+        font-style: italic;
+        color: #555;
+        margin-top: 20px;
+    }
