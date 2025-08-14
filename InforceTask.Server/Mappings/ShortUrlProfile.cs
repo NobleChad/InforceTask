@@ -11,8 +11,6 @@ namespace InforceTask.Server.Mappings
             CreateMap<ShortUrl, ShortUrlListDto>()
                 .ForMember(dest => dest.ShortUrl,
                            opt => opt.MapFrom(src => string.Empty))
-                .ForMember(dest => dest.CanEdit,
-                           opt => opt.Ignore())
                 .ReverseMap();
 
             CreateMap<ShortUrl, ShortUrlDetailDto>()
