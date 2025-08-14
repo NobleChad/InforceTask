@@ -9,7 +9,7 @@ Follow these steps to successfully set up and run the web application:
 ## Clone Repository
 Open Windows PowerShell and write down this commands one by one:
 ```
-git clone https://github.com/NobleChad/TestProject
+git clone https://github.com/NobleChad/InforceTask
 ```
 ```
 cd InforceTask.Server
