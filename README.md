@@ -22,4 +22,4 @@ dotnet tool install --global dotnet-ef
 dotnet ef database update
 ```
 ## Run the Application
-Enjoy!
+On main page there will be table of links created, guests can see and use them while Users/Admin can Create them. Pressing row in table opens details that are avaliable for Users and Admins. Users can Edit/Delete their own links while admins can do so with any.
