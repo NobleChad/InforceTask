@@ -16,7 +16,7 @@ cd InforceTask.Server
 ```
 ## Apply Migrations
 ```
-dotnet ef migrations add Initial
+dotnet tool install --global dotnet-ef
 ```
 ```
 dotnet ef database update
